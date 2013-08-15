@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cepmuvakkit.kuran"
     android:installLocation="auto"
-    android:versionCode="13"
+    android:versionCode="15"
     android:versionName="3" >
 
     <uses-sdk

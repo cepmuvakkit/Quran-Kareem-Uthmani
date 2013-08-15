@@ -23,7 +23,7 @@ public class QuranFileUtils {
   private static final String TAG = "QuranFileUtils";
 
   public static String IMG_HOST = "http://android.quran.com/data/";
-  private static String QURAN_BASE = "quran_android/";
+  private static String QURAN_BASE = "kurani_kerim/";
   private static String DATABASE_DIRECTORY = "databases";
   private static int BUFF_SIZE = 1024;
   public static final String PACKAGE_NAME = "com.cepmuvakkit.kuran";
