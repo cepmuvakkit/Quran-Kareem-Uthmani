@@ -19,7 +19,7 @@ import com.cepmuvakkit.kuran.R;
 public class QuranDisplayHelper {
    private static final String TAG = "QuranDisplayHelper";
    
-   public static Bitmap getQuranPage(Context context,
+  public static Bitmap getQuranPage(Context context,
                                      String widthParam, int page){
       Bitmap bitmap;
 

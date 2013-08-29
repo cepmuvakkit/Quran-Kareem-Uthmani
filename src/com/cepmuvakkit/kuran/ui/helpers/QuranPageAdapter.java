@@ -60,7 +60,7 @@ public class QuranPageAdapter extends FragmentStatePagerAdapter {
    }
 
 	@Override
-	public int getCount(){ return mIsDualPages ? 302 : 604; }
+	public int getCount(){ return mIsDualPages ? 302 : 605; }
 
 	@Override
 	public Fragment getItem(int position){

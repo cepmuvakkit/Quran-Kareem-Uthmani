@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.cepmuvakkit.kuran.common.QuranAyah;
+import com.cepmuvakkit.kuran.data.Constants;
 import com.cepmuvakkit.kuran.data.QuranInfo;
 import com.cepmuvakkit.kuran.service.util.AudioRequest;
 import com.cepmuvakkit.kuran.service.util.DownloadAudioRequest;
@@ -128,8 +129,8 @@ public class AudioUtils {
 
       int pageLastSura = 114;
       int pageLastAyah = 6;
-      if (page > 604 || page < 0){ return null; }
-      if (page < 604){
+      if (page > Constants.PAGES_LAST || page < 0){ return null; }
+      if (page < Constants.PAGES_LAST){
          int nextPageSura = QuranInfo.PAGE_SURA_START[page];
          int nextPageAyah = QuranInfo.PAGE_AYAH_START[page];
 

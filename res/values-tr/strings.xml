@@ -111,7 +111,7 @@ http://android.quran.com/</string>
     <string name="search_data">Veri arama</string>
     <string name="remove_dlg_title">Meâli kaldır?</string>
     <string name="remove_dlg_msg">%1$s  kaldırmak istediğinize emin misiniz?</string>
-    <string name="quran_sura_title">Sure</string>
+    <string name="quran_sura_title">Suresi</string>
     <string name="prefs_volume_key_navigation_summary">Sayfalar arasında Ses düğmelerini kullanarak dolaş</string>
     <string name="prefs_volume_key_navigation_title">Ses düğmesi ile dolaşma</string>
     <string name="process_progress"> %1$d / %2$d dosya işleniyor</string>

@@ -110,7 +110,7 @@ public class QuranPageWorker {
          imageViewReference = new WeakReference<ImageView>(imageView);
       }
 
-      @Override
+    @Override
       protected BitmapDrawable doInBackground(Integer... params) {
          data = params[0];
          Bitmap bitmap = QuranDisplayHelper.getQuranPage(

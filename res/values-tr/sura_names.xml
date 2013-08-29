@@ -4,11 +4,11 @@
     <string-array name="sura_names">
         <item>Fatiha</item>
         <item>Bakara</item>
-        <item>Ali İmran</item>
+        <item>Âl-i İmran</item>
         <item>Nisa</item>
         <item>Maide</item>
-        <item>Enam</item>
-        <item>Araf</item>
+        <item>En’âm</item>
+        <item>A’raf</item>
         <item>Enfal</item>
         <item>Tevbe</item>
         <item>Yunus</item>
@@ -24,10 +24,10 @@
         <item>Taha</item>
         <item>Enbiya</item>
         <item>Hac</item>
-        <item>Muminun</item>
+        <item>Mü’minun</item>
         <item>Nur</item>
         <item>Furka</item>
-        <item>Suara</item>
+        <item>Şuara</item>
         <item>Neml</item>
         <item>Kasas</item>
         <item>Ankebut</item>
@@ -43,16 +43,16 @@
         <item>Zümer</item>
         <item>Mumin</item>
         <item>Fussilet</item>
-        <item>Sura</item>
+        <item>Şura</item>
         <item>Zuhruf</item>
-        <item>Duha</item>
+        <item>Duhan</item>
         <item>Casiye</item>
         <item>Ahkaf</item>
         <item>Muhammed</item>
         <item>Fetih</item>
         <item>Hucurat</item>
         <item>Kaf</item>
-        <item>Zariyat</item>
+        <item>Zâriyat</item>
         <item>Tur</item>
         <item>Necm</item>
         <item>Kamer</item>
@@ -61,11 +61,11 @@
         <item>Hadid</item>
         <item>Mücadele</item>
         <item>Haşr</item>
-        <item>Mümtahine</item>
+        <item>Mümtehine</item>
         <item>Saf</item>
-        <item>Cuma</item>
+        <item>Cum’a</item>
         <item>Münafikun</item>
-        <item>Tegabun</item>
+        <item>Tegabün</item>
         <item>Talak</item>
         <item>Tahrim</item>
         <item>Mülk</item>
@@ -88,7 +88,7 @@
         <item>İnşikak</item>
         <item>Buruc</item>
         <item>Tarik</item>
-        <item>Ala</item>
+        <item>A’la</item>
         <item>Gaşiye</item>
         <item>Fecr</item>
         <item>Beled</item>
@@ -102,13 +102,13 @@
         <item>Beyyine</item>
         <item>Zilzal</item>
         <item>Adiyat</item>
-        <item>Karia</item>
+        <item>Kari’a</item>
         <item>Tekasür</item>
         <item>Asr</item>
         <item>Hümeze</item>
         <item>Fil</item>
         <item>Kureyş</item>
-        <item>Mau</item>
+        <item>Ma’un</item>
         <item>Kevser</item>
         <item>Kafirun</item>
         <item>Nasr</item>

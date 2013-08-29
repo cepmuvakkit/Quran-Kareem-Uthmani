@@ -2,7 +2,7 @@
 <resources>
     <color name="actionbar_separator">#ff144d19</color>
     <color name="page_border_color">#802A2A</color>
-    <color name="page_background">#FFF4CB</color>
+	<color name="page_background">#faffc9</color>
     <color name="header_text_color">#ff22e774</color>
     <color name="sura_info_color">#FFFFFF</color>
     <color name="sura_details_color">#D1D1D1</color>

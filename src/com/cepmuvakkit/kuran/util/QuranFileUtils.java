@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
 
+import com.cepmuvakkit.kuran.data.Constants;
 import com.cepmuvakkit.kuran.data.QuranDataProvider;
 
 import java.io.File;
@@ -22,7 +23,8 @@ import java.util.Locale;
 public class QuranFileUtils {
   private static final String TAG = "QuranFileUtils";
 
-  public static String IMG_HOST = "http://android.quran.com/data/";
+  //public static String IMG_HOST = "http://android.quran.com/data/";
+  public static String IMG_HOST = "http://kurani.kerim.cepmuvakkit.com/data/hatlar/hafizosman/";
   private static String QURAN_BASE = "kurani_kerim/";
   private static String DATABASE_DIRECTORY = "databases";
   private static int BUFF_SIZE = 1024;
@@ -84,7 +86,7 @@ public class QuranFileUtils {
           return false;
         }
         int files = fileList.length;
-        if (files >= 604) {
+        if (files >= Constants.PAGES_LAST) {
           // ideally, we should loop for each page and ensure
           // all pages are there, but this will do for now.
           return true;
@@ -96,10 +98,10 @@ public class QuranFileUtils {
     return false;
   }
 
-  public static String getPageFileName(int p) {
+ public static String getPageFileName(int p) {
     NumberFormat nf = NumberFormat.getInstance(Locale.US);
     nf.setMinimumIntegerDigits(3);
-    return "page" + nf.format(p) + ".png";
+    return "page" + nf.format(p) + ".jpg";
   }
 
   public static boolean isSDCardMounted() {

@@ -15,7 +15,7 @@ public class Constants {
 
    // Pages
    public static final int PAGES_FIRST = 1;
-   public static final int PAGES_LAST = 604;
+   public static final int PAGES_LAST = 605;
    public static final int SURA_FIRST = 1;
    public static final int SURA_LAST = 114;
    public static final int SURAS_COUNT = 114;
@@ -25,8 +25,10 @@ public class Constants {
    public static final int NO_PAGE_SAVED = -1;
 
    // quranapp
-   public static final String QURAN_APP_BASE = "http://quranapp.com/";
-   public static final String QURAN_APP_ENDPOINT = "http://quranapp.com/note";
+  // public static final String QURAN_APP_BASE = "http://quranapp.com/";
+   //public static final String QURAN_APP_ENDPOINT = "http://quranapp.com/note";
+  public static final String QURAN_APP_BASE = "http://kurani.kerim.cepmuvakkit.com/";
+  public static final String QURAN_APP_ENDPOINT = "http://kurani.kerim.cepmuvakkit.com/note";
 
    // Settings Key
    public static final String PREF_USE_ARABIC_NAMES = "useArabicNames";

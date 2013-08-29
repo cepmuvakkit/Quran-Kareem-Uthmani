@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Quran</string>
+    <string name="app_name">Quran Kareem</string>
     <string name="downloadPrompt_title">Download Required Files?</string>
     <string name="downloadPrompt">For optimal performance, some files must be
 			downloaded.  If you choose not to do this now, each page will take
