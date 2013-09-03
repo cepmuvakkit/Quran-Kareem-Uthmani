@@ -50,6 +50,9 @@ public class Constants {
            "ayahBeforeTranslation";
    public static final String PREF_PREFER_STREAMING = "preferStreaming";
    public static final String PREF_DOWNLOAD_AMOUNT = "preferredDownloadAmount";
+   public static final String PREF_DOWNLOAD_SCRIPT = "scriptChoice";
+
+   
    public static final String PREF_LAST_UPDATED_TRANSLATIONS =
            "lastTranslationsUpdate";
    public static final String PREF_HAVE_UPDATED_TRANSLATIONS =

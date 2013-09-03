@@ -52,7 +52,7 @@ http://android.quran.com/</string>
     </plurals>
     
     <!-- Search messages -->
-    <string name="found_in_sura">Sure de bulundu</string>
+    <string name="found_in_sura">Sûre de bulundu</string>
     <string name="no_results">Bir sonuç bulunamadı \"%s\"</string>
     <string name="no_active_translation">Aktif bir meal set edilmedi. Lütfen bir meal aktif yapıp daha sonra arama yapın</string>
     <string name="no_arabic_search_available">Arapça arama paketi indirilmedi. Lütfen indirip daha sonra tekrar deneyin</string>
@@ -85,7 +85,7 @@ http://android.quran.com/</string>
     <string name="quran_hizb">Hizb</string>
     <string name="quran_juz2">Cüz\'</string>
     <string name="quran_page">Sayfa</string>
-    <string name="quran_sura">Sure</string>
+    <string name="quran_sura">Sûre</string>
     <string name="quran_ayah">Ayet</string>
     <string name="notification_download_canceled">İndirme iptal edildi</string>
     <string name="unbookmark_ayah">Bu ayet için sayfa işaretini kaldır</string>
@@ -101,7 +101,7 @@ http://android.quran.com/</string>
     <string name="tag_bookmark">Sayfa işareti etiketi</string>
     <string name="tag_ayah">Bu ayeti işaretle</string>
     <string name="tag_dlg_title">Etiket</string>
-    <string name="sura_ayah_notification_str">Sure %1$s, Ayet %2$d</string>
+    <string name="sura_ayah_notification_str">Sûre %1$s, Ayet %2$d</string>
     <string name="tag_name">İsim</string>
     <string name="show_more">Daha Fazla Göster</string>
     <string name="share_ayah_text">Ayet mealini paylaş</string>
@@ -111,7 +111,7 @@ http://android.quran.com/</string>
     <string name="search_data">Veri arama</string>
     <string name="remove_dlg_title">Meâli kaldır?</string>
     <string name="remove_dlg_msg">%1$s  kaldırmak istediğinize emin misiniz?</string>
-    <string name="quran_sura_title">Suresi</string>
+    <string name="quran_sura_title">Sûresi</string>
     <string name="prefs_volume_key_navigation_summary">Sayfalar arasında Ses düğmelerini kullanarak dolaş</string>
     <string name="prefs_volume_key_navigation_title">Ses düğmesi ile dolaşma</string>
     <string name="process_progress"> %1$d / %2$d dosya işleniyor</string>
@@ -129,7 +129,7 @@ http://android.quran.com/</string>
     <string name="prefs_sdcard_external">Harici SD kartı</string>
     <string name="prefs_sdcard_auto">Otomatik</string>
     <string name="prefs_overlay_page_info_title">Sayfa Bilgisini Göster (Deneme)</string>
-    <string name="prefs_overlay_page_info_summary">Cüz\' numarası, Sure ismi ve sayfa numarası üstünde göster</string>
+    <string name="prefs_overlay_page_info_summary">Cüz\' numarası, Sûre ismi ve sayfa numarası üstünde göster</string>
     <string name="prefs_night_mode_text_brightness_title">Metin parlaklığı</string>
     <string name="prefs_night_mode_text_brightness_summary">Gece modu açıkken metin parlaklığı</string>
     <string name="prefs_new_background_title">Yeni arkaplan</string>
@@ -188,7 +188,7 @@ http://android.quran.com/</string>
     <string name="download_error_invalid_download">İndirilen dosya bozuk</string>
     <string name="download_error_invalid_download_retry">Bozuk dosya, tekrar deneniyor</string>
     <string name="downloadImportantPrompt">Kuran resim dosyaları için bu küçük  güncelleme  önemlidir.  Bu güncellemeyi indirmek istiyor musunuz?</string>
-    <string name="download_successful">Yüklendi %1$s / %2$s</string>
+    <string name="download_successful">Başarılı Yüklendi</string>
     <string name="download_error_network">Ağ problemi yüzünden indirilemedi</string>
     <string name="downloadTabletPrompt">Daha gelişmiş resimler eklendi indirmek istiyor musunuz?</string>
     <string name="download_non_wifi_prompt">Kablosuz bağlantı mevctu değil . Yine de indirmek istiyor musunuz?</string>

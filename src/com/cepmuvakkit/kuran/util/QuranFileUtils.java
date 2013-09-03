@@ -1,9 +1,11 @@
 package com.cepmuvakkit.kuran.util;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.cepmuvakkit.kuran.data.Constants;
@@ -24,7 +26,11 @@ public class QuranFileUtils {
   private static final String TAG = "QuranFileUtils";
 
   //public static String IMG_HOST = "http://android.quran.com/data/";
-  public static String IMG_HOST = "http://kurani.kerim.cepmuvakkit.com/data/hatlar/hafizosman/";
+  public static String IMG_HOST = "http://kurani.kerim.cepmuvakkit.com/data/hatlar/";
+  public static String DETAIL = "hafizosman/";
+
+  public static String AUDIO_HOST = "http://android.quran.com/data/";
+
   private static String QURAN_BASE = "kurani_kerim/";
   private static String DATABASE_DIRECTORY = "databases";
   private static int BUFF_SIZE = 1024;
@@ -180,7 +186,10 @@ public class QuranFileUtils {
       return null;
     }
 
-    String urlString = IMG_HOST + "width"
+    SharedPreferences prefs =
+            PreferenceManager.getDefaultSharedPreferences(context);
+    DETAIL = prefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,"hafizosman/");
+    String urlString = IMG_HOST+DETAIL+ "width"
         + instance.getWidthParam() + "/"
         + filename;
     Log.d(TAG, "want to download: " + urlString);
@@ -256,7 +265,10 @@ public class QuranFileUtils {
       if (!basePath.endsWith("/")){
         basePath += "/";
       }
-      return basePath + QURAN_BASE;
+      SharedPreferences prefs =
+              PreferenceManager.getDefaultSharedPreferences(context);
+      DETAIL = prefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,"hafizosman/");
+      return basePath + QURAN_BASE+DETAIL;
     }
     return null;
   }
@@ -304,26 +316,29 @@ public class QuranFileUtils {
     return (base == null) ? null : base + "width" + widthParam;
   }
 
-  public static String getZipFileUrl() {
+  public static String getZipFileUrl(Context context) {
     QuranScreenInfo qsi = QuranScreenInfo.getInstance();
     if (qsi == null) {
       return null;
     }
-    return getZipFileUrl(qsi.getWidthParam());
+    return getZipFileUrl(context,qsi.getWidthParam());
   }
 
-  public static String getZipFileUrl(String widthParam) {
-    String url = IMG_HOST;
+  public static String getZipFileUrl(Context context,String widthParam) {
+	  SharedPreferences prefs =
+	            PreferenceManager.getDefaultSharedPreferences(context);
+	DETAIL = prefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,"hafizosman/");
+	String url = IMG_HOST+DETAIL;
     url += "images" + widthParam + ".zip";
     return url;
   }
 
-  public static String getPatchFileUrl(String widthParam, int toVersion) {
+ public static String getPatchFileUrl(String widthParam, int toVersion) {
     return IMG_HOST + "patches/patch" +
         widthParam + "_v" + toVersion + ".zip";
   }
 
-  public static String getAyaPositionFileName() {
+public static String getAyaPositionFileName() {
     QuranScreenInfo qsi = QuranScreenInfo.getInstance();
     if (qsi == null) return null;
     return getAyaPositionFileName(qsi.getWidthParam());
@@ -342,7 +357,7 @@ public class QuranFileUtils {
   }
 
   public static String getAyaPositionFileUrl(String widthParam) {
-    String url = IMG_HOST + "width" + widthParam;
+    String url = IMG_HOST+ DETAIL+ "width" + widthParam;
     url += "/ayahinfo" + widthParam + ".zip";
     return url;
   }
@@ -351,7 +366,7 @@ public class QuranFileUtils {
     QuranScreenInfo qsi = QuranScreenInfo.getInstance();
     if (qsi == null)
       return null;
-    return IMG_HOST + "databases/audio/";
+    return AUDIO_HOST + "databases/audio/";
   }
 
   public static boolean haveAyaPositionFile(Context context) {
@@ -397,7 +412,7 @@ public class QuranFileUtils {
   }
 
   public static String getArabicSearchDatabaseUrl() {
-    return IMG_HOST + DATABASE_DIRECTORY + "/" +
+    return IMG_HOST +DETAIL+ DATABASE_DIRECTORY + "/" +
         QuranDataProvider.QURAN_ARABIC_DATABASE;
   }
 
@@ -451,7 +466,10 @@ public class QuranFileUtils {
     if (QuranSettings.getAppCustomLocation(context).equals(newLocation))
       return true;
     File currentDirectory = new File(getQuranBaseDirectory(context));
-    File newDirectory = new File(newLocation, QURAN_BASE);
+    SharedPreferences prefs =
+            PreferenceManager.getDefaultSharedPreferences(context);
+    DETAIL = prefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,"hafizosman/");
+    File newDirectory = new File(newLocation, QURAN_BASE+DETAIL);
     if (!currentDirectory.exists()) {
       // No files to copy, so change the app directory directly
       return true;

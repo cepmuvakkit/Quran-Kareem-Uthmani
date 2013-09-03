@@ -193,7 +193,7 @@ public class TabletFragment extends SherlockFragment implements AyahTracker {
       return;
     }
 
-    if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, true)) {
+    if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, false)) {
       int color = mResources.getColor(R.color.page_background);
       mLeftArea.setBackgroundColor(color);
       mRightArea.setBackgroundColor(color);

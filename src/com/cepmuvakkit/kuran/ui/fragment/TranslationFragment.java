@@ -117,7 +117,7 @@ public class TranslationFragment extends SherlockFragment
     mMainView.setBackgroundDrawable((mPageNumber % 2 == 0 ?
         mLeftGradient : mRightGradient));
 
-    if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, true)) {
+    if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, false)) {
       mMainView.setBackgroundColor(mResources.getColor(R.color.page_background));
     }
     if (mPrefs.getBoolean(Constants.PREF_NIGHT_MODE, false)) {

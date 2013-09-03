@@ -63,8 +63,7 @@ public class QuranDataActivity extends SherlockActivity implements
 
       super.onCreate(savedInstanceState);
       setContentView(R.layout.splash_screen);
-
-     mSplashView = (QuranMaxImageView)findViewById(R.id.splashview);
+         mSplashView = (QuranMaxImageView)findViewById(R.id.splashview);
       if (Build.VERSION.SDK_INT >= 14){
         // actually requires 11+, but the other call we need
         // for getting max bitmap height requires 14+
@@ -90,8 +89,9 @@ public class QuranDataActivity extends SherlockActivity implements
       mSharedPreferences = PreferenceManager
             .getDefaultSharedPreferences(getApplicationContext());
 
-      // one time upgrade to v2.4.3
-      if (!mSharedPreferences.contains(Constants.PREF_UPGRADE_TO_243)){
+     // one time upgrade to v2.4.3
+  // if (!mSharedPreferences.contains(Constants.PREF_UPGRADE_TO_243)){
+   if (!mSharedPreferences.contains(Constants.PREF_UPGRADE_TO_243)){
          String baseDir = QuranFileUtils.getQuranBaseDirectory(this);
          if (baseDir != null){
             baseDir = baseDir + File.separator;
@@ -347,7 +347,8 @@ public class QuranDataActivity extends SherlockActivity implements
          else {
             // force a check for the images version 3, if it's not
             // there, download the patch.
-            QuranScreenInfo qsi = QuranScreenInfo.getInstance();
+        	  
+      /*      QuranScreenInfo qsi = QuranScreenInfo.getInstance();
             String widthParam = qsi.getWidthParam();
             if (qsi.isTablet(QuranDataActivity.this)){
                String tabletWidth = qsi.getTabletWidthParam();
@@ -358,18 +359,18 @@ public class QuranDataActivity extends SherlockActivity implements
                   widthParam += tabletWidth;
                   // get patch for both landscape/portrait tablet images
                   mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
-                  promptForDownload();
+                 promptForDownload();
                   return;
                }
-            }
-            else if (!QuranFileUtils.isVersion(QuranDataActivity.this,
+            }*/
+         /*  else if (!QuranFileUtils.isVersion(QuranDataActivity.this,
                     widthParam, 3)){
                // explicitly check whether we need to fix the images
-               mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
+              mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
                promptForDownload();
                return;
             }
-
+*/
             long time = mSharedPreferences.getLong(
                     Constants.PREF_LAST_UPDATED_TRANSLATIONS, 0);
             Date now = new Date();
@@ -416,23 +417,23 @@ public class QuranDataActivity extends SherlockActivity implements
       String url;
       if (mNeedPortraitImages && !mNeedLandscapeImages){
          // phone (and tablet when upgrading on some devices, ex n10)
-         url = QuranFileUtils.getZipFileUrl();
+         url = QuranFileUtils.getZipFileUrl(this);
       }
       else if (mNeedLandscapeImages && !mNeedPortraitImages){
          // tablet (when upgrading from pre-tablet on some devices, ex n7).
-         url = QuranFileUtils.getZipFileUrl(qsi.getTabletWidthParam());
+         url = QuranFileUtils.getZipFileUrl(this,qsi.getTabletWidthParam());
       }
       else {
          // new tablet installation - if both image sets are the same
          // size, then just get the correct one only
          if (qsi.getTabletWidthParam().equals(qsi.getWidthParam())){
-            url = QuranFileUtils.getZipFileUrl();
+            url = QuranFileUtils.getZipFileUrl(this);
          }
          else {
             // otherwise download one zip with both image sets
             String widthParam = qsi.getWidthParam() +
                     qsi.getTabletWidthParam();
-            url = QuranFileUtils.getZipFileUrl(widthParam);
+            url = QuranFileUtils.getZipFileUrl(this,widthParam);
          }
       }
 
@@ -465,10 +466,10 @@ public class QuranDataActivity extends SherlockActivity implements
          message = R.string.downloadTabletPrompt;
       }
 
-      if (!TextUtils.isEmpty(mPatchUrl)){
+  /*    if (!TextUtils.isEmpty(mPatchUrl)){
          // patch message if applicable
          message = R.string.downloadImportantPrompt;
-      }
+      }*/
 
       AlertDialog.Builder dialog = new AlertDialog.Builder(this);
       dialog.setMessage(message);
