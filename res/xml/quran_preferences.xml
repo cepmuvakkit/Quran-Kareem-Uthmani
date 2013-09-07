@@ -6,7 +6,7 @@
     <PreferenceCategory android:key="@string/prefs_display_category_key"
        android:title="@string/prefs_category_display_settings" >
         <ListPreference
-                    android:defaultValue="hafizosman"
+                    android:defaultValue="hafizosman/"
                     android:dialogTitle="Hattat İsmini Seçin"
                     android:entries="@array/download_script_name"
                     android:entryValues="@array/download_script_name_values"
@@ -69,7 +69,7 @@
             android:summary="@string/prefs_night_mode_summary"
             android:title="@string/prefs_night_mode_title" />
         
-        <com.cepmuvakkit.kuran.widgets.SeekBarPreference
+        <com.cepmuvakkit.kuran.hatli.widgets.SeekBarPreference
             android:dependency="@string/prefs_night_mode"
             android:defaultValue="255"
             android:key="@string/prefs_night_mode_text_brightness"
@@ -114,8 +114,8 @@
             android:summary="@string/prefs_translations_summary">
 
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cepmuvakkit.kuran"
-                    android:targetClass="com.cepmuvakkit.kuran.ui.TranslationManagerActivity" />
+                    android:targetPackage="com.cepmuvakkit.kuran.hatli"
+                    android:targetClass="com.cepmuvakkit.kuran.hatli.ui.TranslationManagerActivity" />
         </PreferenceScreen>
 
         <CheckBoxPreference
@@ -125,7 +125,7 @@
                 android:summary="@string/prefs_ayah_before_translation_summary"
                 android:title="@string/prefs_ayah_before_translation_title" />
 	
-        <com.cepmuvakkit.kuran.widgets.SeekBarPreference
+        <com.cepmuvakkit.kuran.hatli.widgets.SeekBarPreference
             android:defaultValue="15"
             android:key="@string/prefs_translation_text_size"
             android:max="40"

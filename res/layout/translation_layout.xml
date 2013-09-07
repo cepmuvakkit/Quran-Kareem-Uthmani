@@ -10,7 +10,7 @@
                android:layout_alignParentLeft="true"
                android:layout_width="wrap_content"
                android:layout_height="fill_parent" />
-    <com.cepmuvakkit.kuran.widgets.TranslationView
+    <com.cepmuvakkit.kuran.hatli.widgets.TranslationView
             android:id="@+id/translation_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

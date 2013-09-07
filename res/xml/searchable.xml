@@ -4,9 +4,9 @@
   android:label="@string/app_name"
   android:hint="@string/search_hint"
   android:includeInGlobalSearch="true"
-  android:searchSuggestAuthority="com.cepmuvakkit.kuran.data.QuranDataProvider"
+  android:searchSuggestAuthority="com.cepmuvakkit.kuran.hatli.data.QuranDataProvider"
   android:searchSuggestIntentAction="android.intent.action.VIEW"
   android:searchSettingsDescription="@string/quranSearchType"
-  android:searchSuggestIntentData="content://com.cepmuvakkit.kuran.data.QuranDataProvider/quran/verse"
+  android:searchSuggestIntentData="content://com.cepmuvakkit.kuran.hatli.data.QuranDataProvider/quran/verse"
   android:searchSuggestSelection="word MATCH ?">
 </searchable>

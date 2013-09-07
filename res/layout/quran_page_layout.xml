@@ -10,7 +10,7 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_width="wrap_content"
 	    android:layout_height="match_parent" />
-	<com.cepmuvakkit.kuran.widgets.HighlightingImageView
+	<com.cepmuvakkit.kuran.hatli.widgets.HighlightingImageView
 		android:id="@+id/page_image"
         android:layout_centerInParent="true"
 		android:layout_toRightOf="@id/left_border"

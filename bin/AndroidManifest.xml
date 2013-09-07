@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cepmuvakkit.kuran"
+    package="com.cepmuvakkit.kuran.hatli"
     android:installLocation="auto"
-    android:versionCode="245"
-    android:versionName="2.4.5" >
+    android:versionCode="15"
+    android:versionName="3" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -67,15 +67,14 @@
                 <data android:scheme="quran" />
             </intent-filter>
         </activity>
-
-        <!-- declare the default searchable Activity for the whole app -->
+    <!-- declare the default searchable Activity for the whole app -->
         <meta-data
             android:name="android.app.default_searchable"
             android:value=".SearchActivity" />
         <!-- provides search suggestions for verses. -->
         <provider
             android:name=".data.QuranDataProvider"
-            android:authorities="com.cepmuvakkit.kuran.data.QuranDataProvider" />
+            android:authorities="com.cepmuvakkit.kuran.hatli.data.QuranDataProvider" />
 
         <receiver android:name=".service.util.AudioIntentReceiver" >
             <intent-filter>
@@ -93,14 +92,14 @@
             android:name=".service.AudioService"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.cepmuvakkit.kuran.action.PLAYBACK" />
-                <action android:name="com.cepmuvakkit.kuran.action.PLAY" />
-                <action android:name="com.cepmuvakkit.kuran.action.PAUSE" />
-                <action android:name="com.cepmuvakkit.kuran.action.SKIP" />
-                <action android:name="com.cepmuvakkit.kuran.action.REWIND" />
-                <action android:name="com.cepmuvakkit.kuran.action.STOP" />
-                <action android:name="com.cepmuvakkit.kuran.action.CONNECT" />
-                <action android:name="com.cepmuvakkit.kuran.action.UPDATE_REPEAT" />
+                <action android:name="com.cepmuvakkit.kuran..hatli.action.PLAYBACK" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.PLAY" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.PAUSE" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.SKIP" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.REWIND" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.STOP" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.CONNECT" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.UPDATE_REPEAT" />
             </intent-filter>
         </service>
 

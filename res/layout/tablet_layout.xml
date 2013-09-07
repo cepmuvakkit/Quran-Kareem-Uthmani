@@ -16,12 +16,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true" />
-        <com.cepmuvakkit.kuran.widgets.HighlightingImageView
+        <com.cepmuvakkit.kuran.hatli.widgets.HighlightingImageView
             android:id="@+id/left_page_image"
             android:layout_toRightOf="@id/left_border"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-        <com.cepmuvakkit.kuran.widgets.TranslationView
+        <com.cepmuvakkit.kuran.hatli.widgets.TranslationView
             android:id="@+id/left_page_translation"
             android:layout_toRightOf="@id/left_border"
             android:layout_width="match_parent"
@@ -45,12 +45,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true" />
-       <com.cepmuvakkit.kuran.widgets.HighlightingImageView
+       <com.cepmuvakkit.kuran.hatli.widgets.HighlightingImageView
             android:id="@+id/right_page_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/right_border" />
-        <com.cepmuvakkit.kuran.widgets.TranslationView
+        <com.cepmuvakkit.kuran.hatli.widgets.TranslationView
             android:id="@+id/right_page_translation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

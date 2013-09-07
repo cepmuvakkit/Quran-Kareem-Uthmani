@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Kuran-ı Kerim</string>
+    <string name="app_name">Kuran-ı Kerim Hafız Osman Hattı</string>
     <string name="downloadPrompt_title">Gerekli Dosyalari yükleyeyim mi?</string>
     <string name="downloadPrompt">Daha iyi performans icin bazı dosyalar SD karta kopyalanmalı.
 		Eğer şimdi bu işlemi gerçekleştirmez iseniz sayfaların ayrı ayrı indirilmesi daha uzun sürebilir.

@@ -9,7 +9,7 @@
       android:layout_height="match_parent"
       android:id="@+id/quran_pager"/>
 
-    <com.cepmuvakkit.kuran.widgets.AudioStatusBar
+    <com.cepmuvakkit.kuran.hatli.widgets.AudioStatusBar
                   android:id="@+id/audio_area"
                   android:layout_width="match_parent"
                   android:layout_height="@dimen/audiobar_height"
