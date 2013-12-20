@@ -64,7 +64,10 @@ public class QuranFileUtils {
   // that we specify (ex if version is 3, check for a .v3 file).
   public static boolean isVersion(Context context,
                                   String widthParam, int version) {
-    String quranDirectory = getQuranDirectory(context, widthParam);
+	  
+	  return true;
+	  
+  /*  String quranDirectory = getQuranDirectory(context, widthParam);
     if (quranDirectory == null) {
       return false;
     }
@@ -74,7 +77,7 @@ public class QuranFileUtils {
       return vFile.exists();
     } catch (Exception e) {
       return false;
-    }
+    }*/
   }
 
   public static boolean haveAllImages(Context context, String widthParam) {
@@ -107,7 +110,7 @@ public class QuranFileUtils {
  public static String getPageFileName(int p) {
     NumberFormat nf = NumberFormat.getInstance(Locale.US);
     nf.setMinimumIntegerDigits(3);
-    return "page" + nf.format(p) + ".png";
+    return "page" + nf.format(p) + ".gif";
   }
 
   public static boolean isSDCardMounted() {

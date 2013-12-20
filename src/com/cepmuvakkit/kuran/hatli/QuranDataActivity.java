@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -30,16 +31,15 @@ import com.cepmuvakkit.kuran.hatli.util.QuranFileUtils;
 import com.cepmuvakkit.kuran.hatli.util.QuranScreenInfo;
 import com.cepmuvakkit.kuran.hatli.widgets.QuranMaxImageView;
 import com.cepmuvakkit.kuran.hatli.R;
+
 import net.hockeyapp.android.CrashManager;
 
 import java.io.File;
 import java.util.Date;
 
-public class QuranDataActivity extends SherlockActivity implements
-        DefaultDownloadReceiver.SimpleDownloadListener {
+public class QuranDataActivity extends SherlockActivity implements       DefaultDownloadReceiver.SimpleDownloadListener {
 
-   public static final String TAG =
-           "com.cepmuvakkit.kuran.hatli.QuranDataActivity";
+   public static final String TAG = "com.cepmuvakkit.kuran.hatli.QuranDataActivity";
    public static final String PAGES_DOWNLOAD_KEY = "PAGES_DOWNLOAD_KEY";
    private static final int MSG_REFRESH_MAX_HEIGHT = 1;
 
@@ -47,6 +47,7 @@ public class QuranDataActivity extends SherlockActivity implements
    private AsyncTask<Void, Void, Boolean> mCheckPagesTask;
    private AlertDialog mErrorDialog = null;
    private AlertDialog mPromptForDownloadDialog = null;
+   private AlertDialog  promptForScriptChoiceDialog= null;
    private SharedPreferences mSharedPreferences = null;
    private DefaultDownloadReceiver mDownloadReceiver = null;
    private boolean mNeedPortraitImages = false;
@@ -89,7 +90,6 @@ public class QuranDataActivity extends SherlockActivity implements
             .getDefaultSharedPreferences(getApplicationContext());
 
      // one time upgrade to v2.4.3
-  // if (!mSharedPreferences.contains(Constants.PREF_UPGRADE_TO_243)){
    if (!mSharedPreferences.contains(Constants.PREF_UPGRADE_TO_243)){
          String baseDir = QuranFileUtils.getQuranBaseDirectory(this);
          if (baseDir != null){
@@ -121,9 +121,10 @@ public class QuranDataActivity extends SherlockActivity implements
                  .remove(Constants.PREF_UPGRADE_TO_242)
                  .putBoolean(Constants.PREF_UPGRADE_TO_243, true).commit();
       }
+
    }
-   
-   @Override
+  
+@Override
    protected void onResume(){
       super.onResume();
       if (Constants.CRASH_REPORTING_ENABLED){
@@ -159,6 +160,8 @@ public class QuranDataActivity extends SherlockActivity implements
       }
 
       // check whether or not we need to download
+      
+  
       mCheckPagesTask = new CheckPagesAsyncTask();
       mCheckPagesTask.execute();
    }
@@ -320,72 +323,78 @@ public class QuranDataActivity extends SherlockActivity implements
       }
       
       @Override
-      protected void onPostExecute(Boolean result) {
-         mCheckPagesTask = null;
-         mPatchUrl = null;
-         if (mIsPaused){ return; }
-                  
-         if (result == null || !result){
-            String lastErrorItem = mSharedPreferences.getString(
-                        QuranDownloadService.PREF_LAST_DOWNLOAD_ITEM, "");
-            if (PAGES_DOWNLOAD_KEY.equals(lastErrorItem)){
-               int lastError = mSharedPreferences.getInt(
-                     QuranDownloadService.PREF_LAST_DOWNLOAD_ERROR, 0);
-               int errorId = ServiceIntentHelper
-                       .getErrorResourceFromErrorCode(lastError, false);
-               showFatalErrorDialog(errorId);
-            }
-            else if (mSharedPreferences.getBoolean(
-                    Constants.PREF_SHOULD_FETCH_PAGES, false)){
-               downloadQuranImages(false);
-            }
-            else {
-               promptForDownload();
-            }
-         }
-         else {
-            // force a check for the images version 3, if it's not
-            // there, download the patch.
-        	  
-      /*      QuranScreenInfo qsi = QuranScreenInfo.getInstance();
-            String widthParam = qsi.getWidthParam();
-            if (qsi.isTablet(QuranDataActivity.this)){
-               String tabletWidth = qsi.getTabletWidthParam();
-               if ((!QuranFileUtils.isVersion(QuranDataActivity.this,
-                       widthParam, 3)) ||
-                   (!QuranFileUtils.isVersion(QuranDataActivity.this,
-                       tabletWidth, 3))){
-                  widthParam += tabletWidth;
-                  // get patch for both landscape/portrait tablet images
+      protected void onPostExecute(Boolean result)
+      {
+      mCheckPagesTask = null;
+      mPatchUrl = null;
+      
+		if (!mSharedPreferences.contains(Constants.PREF_DOWNLOAD_SCRIPT)) {
+			promptForScriptChoice();
+			return;
+		}
+      if (mIsPaused) return; 
+      	 if (result == null || !result) 
+		  {
+				String lastErrorItem = mSharedPreferences.getString(QuranDownloadService.PREF_LAST_DOWNLOAD_ITEM, "");
+				if (PAGES_DOWNLOAD_KEY.equals(lastErrorItem)) 
+				{
+					int lastError = mSharedPreferences.getInt(QuranDownloadService.PREF_LAST_DOWNLOAD_ERROR, 0);
+					int errorId = ServiceIntentHelper.getErrorResourceFromErrorCode(lastError, false);
+					showFatalErrorDialog(errorId);
+				} else if (mSharedPreferences.getBoolean(Constants.PREF_SHOULD_FETCH_PAGES, false)) 
+				{
+					downloadQuranImages(false);
+				} else {
+				
+					
+					promptForDownload();
+				}
+			}
+           else
+           {
+               // force a check for the images version 3, if it's not
+               // there, download the patch.
+               QuranScreenInfo qsi = QuranScreenInfo.getInstance();
+               String widthParam = qsi.getWidthParam();
+               if (qsi.isTablet(QuranDataActivity.this)){
+                  String tabletWidth = qsi.getTabletWidthParam();
+                  if ((!QuranFileUtils.isVersion(QuranDataActivity.this,
+                          widthParam, 3)) ||
+                      (!QuranFileUtils.isVersion(QuranDataActivity.this,
+                          tabletWidth, 3))){
+                     widthParam += tabletWidth;
+                     // get patch for both landscape/portrait tablet images
+                     mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
+                     promptForDownload();
+                     return;
+                  }
+               }
+               else if (!QuranFileUtils.isVersion(QuranDataActivity.this,
+                       widthParam, 3)){
+                  // explicitly check whether we need to fix the images
                   mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
-                 promptForDownload();
+                  promptForDownload();
                   return;
                }
-            }*/
-         /*  else if (!QuranFileUtils.isVersion(QuranDataActivity.this,
-                    widthParam, 3)){
-               // explicitly check whether we need to fix the images
-              mPatchUrl = QuranFileUtils.getPatchFileUrl(widthParam, 3);
-               promptForDownload();
-               return;
+
+               long time = mSharedPreferences.getLong(
+                       Constants.PREF_LAST_UPDATED_TRANSLATIONS, 0);
+               Date now = new Date();
+               Log.d(TAG, "checking whether we should update translations..");
+               if (now.getTime() - time > Constants.TRANSLATION_REFRESH_TIME){
+                  Log.d(TAG, "updating translations list...");
+                  Intent intent = new Intent(QuranDataActivity.this,
+                          QuranDownloadService.class);
+                  intent.setAction(
+                          QuranDownloadService.ACTION_CHECK_TRANSLATIONS);
+                  startService(intent);
+               }
+               runListView();
             }
-*/
-            long time = mSharedPreferences.getLong(
-                    Constants.PREF_LAST_UPDATED_TRANSLATIONS, 0);
-            Date now = new Date();
-            Log.d(TAG, "checking whether we should update translations..");
-            if (now.getTime() - time > Constants.TRANSLATION_REFRESH_TIME){
-               Log.d(TAG, "updating translations list...");
-               Intent intent = new Intent(QuranDataActivity.this,
-                       QuranDownloadService.class);
-               intent.setAction(
-                       QuranDownloadService.ACTION_CHECK_TRANSLATIONS);
-               startService(intent);
-            }
-            runListView();
-         }
-      }      
+      	}      
+
    }
+
 
    /**
     * this method asks the service to download quran images.
@@ -459,20 +468,25 @@ public class QuranDataActivity extends SherlockActivity implements
    }
 
    private void promptForDownload(){
+	   
+	
       int message = R.string.downloadPrompt;
       if (QuranScreenInfo.getInstance().isTablet(this) &&
               (mNeedPortraitImages != mNeedLandscapeImages)){
          message = R.string.downloadTabletPrompt;
       }
-
-  /*    if (!TextUtils.isEmpty(mPatchUrl)){
+      //burası
+     if (!TextUtils.isEmpty(mPatchUrl)){
          // patch message if applicable
          message = R.string.downloadImportantPrompt;
-      }*/
+      }
+     //burası
+
 
       AlertDialog.Builder dialog = new AlertDialog.Builder(this);
       dialog.setMessage(message);
       dialog.setCancelable(false);
+      
       dialog.setPositiveButton(R.string.downloadPrompt_ok,
             new DialogInterface.OnClickListener() {
          public void onClick(DialogInterface dialog, int id) {
@@ -499,6 +513,53 @@ public class QuranDataActivity extends SherlockActivity implements
       mPromptForDownloadDialog.show();
    }
 
+   
+   private void promptForScriptChoice() {
+		final String[] hattatlar = getResources().getStringArray(
+				R.array.download_script_name_values);
+
+		final Editor editor = mSharedPreferences.edit();
+		AlertDialog.Builder singleChoiceDialog = new AlertDialog.Builder(this);
+		//singleChoiceDialog.setIconAttribute(android.R.attr.alertDialogIcon);
+		singleChoiceDialog.setCancelable(false);
+		singleChoiceDialog.setTitle(R.string.alert_dialog_single_choice);
+		singleChoiceDialog.setSingleChoiceItems(R.array.download_script_name,
+				0, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						/* User clicked Yes so do some stuff */
+						editor.putString(Constants.PREF_DOWNLOAD_SCRIPT,
+								hattatlar[whichButton]);
+						/*
+						 * User clicked on a radio button do some stuff
+						 */
+					}
+				});
+		singleChoiceDialog.setPositiveButton(R.string.alert_dialog_ok,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+
+						editor.commit();
+						promptForDownload();
+					}
+				});
+		singleChoiceDialog.setNegativeButton(R.string.cancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						
+						editor.remove(Constants.PREF_DOWNLOAD_SCRIPT);
+						editor.commit();
+						promptForDownload();
+						/* User clicked No so do some stuff */
+					}
+				});
+
+		promptForScriptChoiceDialog = singleChoiceDialog.create();
+		promptForScriptChoiceDialog
+				.setTitle(R.string.alert_dialog_single_choice);
+		promptForScriptChoiceDialog.show();
+ 		
+ 	}
+   
    protected void initializeQuranScreen() {
       QuranScreenInfo.getOrMakeInstance(this);
    }

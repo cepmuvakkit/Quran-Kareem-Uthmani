@@ -12,11 +12,11 @@
         <item>3</item>
     </string-array>
     <string-array name="download_script_name">
-        <item>Hafiz Osman Hattı</item>
-        <item>Bigisayar Hatlı</item>
-        <item>Bilgisayar Hatlı 2</item>
-        <item>Hamid Aytaç Hattı</item>
-        <item>Ahmet Husrev Hattı</item>
+        <item>Haafidh Osman Caligraphy</item>
+        <item>Computer Printing</item>
+        <item>Computer Printing 2</item>
+        <item>Hamid Aytaç Caligraphy</item>
+        <item>Ahmet Husrev Caligraphy</item>
     </string-array>
     <string-array name="download_script_name_values">
         <item>hafizosman/</item>

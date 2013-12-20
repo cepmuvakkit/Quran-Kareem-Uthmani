@@ -7,13 +7,13 @@
        android:title="@string/prefs_category_display_settings" >
         <ListPreference
                     android:defaultValue="hafizosman/"
-                    android:dialogTitle="Hattat İsmini Seçin"
+                    android:dialogTitle="@string/pref_dialog_title"
                     android:entries="@array/download_script_name"
                     android:entryValues="@array/download_script_name_values"
                     android:key="scriptChoice"
-                    android:summary="Kuran-ı Kerim'e ait gösterilmek istenen resimlere ait Hatlar için Hattat seçimi"
-                    android:title="Hattat Seçimi" />
-        
+                    android:summary="@string/pref_dialog_summary"
+                    android:title="@string/pref_title" />
+                
         <CheckBoxPreference
             android:defaultValue="false"
             android:disableDependentsState="false"
@@ -34,7 +34,7 @@
         <CheckBoxPreference 
             android:title="@string/prefs_new_background_title"
             android:defaultValue="false"
-            android:key="@string/prefs_new_background" android:persistent="true"/>
+            android:key="@string/prefs_new_background" android:persistent="true" android:enabled="false" android:selectable="false"/>
 
         <CheckBoxPreference
             android:title="@string/prefs_tablet_mode_title"

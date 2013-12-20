@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <string name="app_name">Kuran-ı Kerim Hafız Osman Hattı</string>
+
+    <string name="app_name">Kuran-ı Kerim Osmanî</string>
     <string name="downloadPrompt_title">Gerekli Dosyalari yükleyeyim mi?</string>
     <string name="downloadPrompt">Daha iyi performans icin bazı dosyalar SD karta kopyalanmalı.
 		Eğer şimdi bu işlemi gerçekleştirmez iseniz sayfaların ayrı ayrı indirilmesi daha uzun sürebilir.
-		Şimdi gerekli dosyaları indirmek istiyor musunuz ?
-		
-		</string>
+		Şimdi gerekli dosyaları indirmek istiyor musunuz ?</string>
     <string name="downloadPrompt_ok">Evet</string>
     <string name="downloadPrompt_no">Hayır</string>
     <string name="downloading_title">Yükleniyor...</string>
@@ -24,12 +23,41 @@
     <string name="developedBy">La tansawna men saleh el doaa.</string>
     <string name="copyRights">Ümmet</string>
     <string name="email_subject">GeriBildirim</string>
-    <string name="aboutUs">
-Kuran-ı Kerim uygulaması ücretsizdir Lütfen Yapımcısınıa dua etmeyi unutmayınız.
-http://android.quran.com/</string>
+    <string name="aboutUs">Kuran-ı Kerim uygulaması ücretsizdir Lütfen Yapımcısınıa dua etmeyi unutmayınız.
+http://android.quran.com/
+ The images used are from the
+            &amp;lt;a href="http://quran.com"&amp;gt;quran.com&amp;lt;/a&amp;gt;
+			project, the audio comes from
+            &amp;lt;a href="http://everyayah.com"&amp;gt;everyayah.com&amp;lt;/a&amp;gt;,
+			the data used in the translations and Arabic comes from
+            &amp;lt;a href="http://tanzil.net"&amp;gt;tanzil.net&amp;lt;/a&amp;gt; and
+            &amp;lt;a href="http://quran.ksu.edu.sa"&amp;gt;quran.ksu.edu.sa&amp;lt;/a&amp;gt;
+            &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;b&amp;gt;Quran for Android Contributors:&amp;lt;/b&amp;gt;
+            &amp;lt;br/&amp;gt;Ahmed El-Helw (&amp;lt;a href="http://twitter.com/ahmedre"&amp;gt;@ahmedre&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Hussein Maher (&amp;lt;a href="http://twitter.com/husseinmaher"&amp;gt;@husseinmaher&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Ahmed Farra (&amp;lt;a href="https://github.com/afarra"&amp;gt;github&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Wael Nafee (&amp;lt;a href="http://twitter.com/wnafee"&amp;gt;@wnafee&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Ahmed Fouad (&amp;lt;a href="http://twitter.com/fo2ad"&amp;gt;@fo2ad&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Somaia Gabr (&amp;lt;a href="http://somaiagabr.com"&amp;gt;web&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Mahmoud Hossam (&amp;lt;a href="https://github.com/mahmoudhossam"&amp;gt;github&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Rehab Mohamed (&amp;lt;a href="http://twitter.com/hams_rrr"&amp;gt;@hams_rrr&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;b&amp;gt;Translators:&amp;lt;/b&amp;gt;
+			&amp;lt;br/&amp;gt;Mehmed Mahmudoglu - Turkish
+         &amp;lt;br/&amp;gt;M. Jafar Nanakar - Farsi
+         &amp;lt;br/&amp;gt;Rinat (Ринат) - Russian
+         &amp;lt;br/&amp;gt;khajavi (on github) - previous Farsi translation
+	      &amp;lt;br/&amp;gt;Yasser Kadddour - Français
+         &amp;lt;br/&amp;gt;Bo Li (&amp;lt;a href="http://twitter.com/liboat"&amp;gt;@liboat&amp;lt;/a&amp;gt;) - Chinese
+         &amp;lt;br/&amp;gt;Goran Gharib Karim - Kurdish
+         &amp;lt;br/&amp;gt;Abduqadir Abliz - Uyghur
+            &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;b&amp;gt;Open Source Projects:&amp;lt;/b&amp;gt;
+            &amp;lt;br/&amp;gt;ActionBarSherlock (&amp;lt;a href="http://abs.io"&amp;gt;abs.io&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;maven-android-plugin (&amp;lt;a href="http://code.google.com/p/maven-android-plugin"&amp;gt;maven-android-plugin&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;b&amp;gt;Special Thanks:&amp;lt;/b&amp;gt;
+            &amp;lt;br/&amp;gt;Ahmed Essam (&amp;lt;a href="http://twitter.com/neo_4583"&amp;gt;@neo_4583&amp;lt;/a&amp;gt;)
+            &amp;lt;br/&amp;gt;Batoul Apps (&amp;lt;a href="http://twitter.com/batoulapps"&amp;gt;@batoulapps&amp;lt;/a&amp;gt;)</string>
     <string name="help_title">Kuran-ı Kerim Yardım</string>
-    <string name="help">
-	Kuran-ı Kerim uygulaması ücretsizdir Lütfen Yapımcısınıa dua etmeyi unutmayınız.
+    <string name="help">	Kuran-ı Kerim uygulaması ücretsizdir Lütfen Yapımcısınıa dua etmeyi unutmayınız.
 		Kaynak kodlar http://github.com/ahmedre/quran_android  adresinden ve kuran-i 
 		kerim resimleri de http://github.com/quran/quran.com-images  adresinden alınmıştır.
 	-Ekranı yan yatırarak daha büyük bir görüntü elde edebilirsiniz
@@ -50,7 +78,7 @@ http://android.quran.com/</string>
         <item quantity="one">arama sonuçları \"%s\": </item>
         <item quantity="other">arama sonuçları  \"%s\": </item>
     </plurals>
-    
+
     <!-- Search messages -->
     <string name="found_in_sura">Sûre de bulundu</string>
     <string name="no_results">Bir sonuç bulunamadı \"%s\"</string>
@@ -149,8 +177,7 @@ http://android.quran.com/</string>
     <string name="prefs_advanced_settings_title">İleri Ayarlar</string>
     <string name="play_from_here">Buradan çalmaya başla</string>
     <string name="page_description">sayfa  %1$s, Cüz\' %2$s</string>
-        <string name="download_progress">İndirildi %1$s / %2$s</string>
-    
+    <string name="download_progress">İndirildi %1$s / %2$s</string>
     <string name="not_tagged">Etiketlenmedi</string>
     <string name="new_tag">Yeni etiket</string>
     <string name="need_translation">Hiçbir meal indirilmedi</string>
@@ -201,8 +228,17 @@ http://android.quran.com/</string>
     <string name="email_quran_android">E-posta gönder</string>
     <string name="edit_tag">Etiket Güncelle</string>
     <string name="download_error_perms">İzin verilmediği için indirilemedi</string>
-      <plurals name="verses">
+
+    <plurals name="verses">
         <item quantity="one">ayet</item>
         <item quantity="other">ayet</item>
     </plurals>
+
+    <string name="alert_dialog_single_choice">Kuran Resimleri için Hattat Seçimi Yapınız</string>
+    <string name="alert_dialog_ok">Tamam</string>
+    <string name="alert_dialog_cancel">İptal</string>
+    <string name="pref_dialog_title">Hattat İsmini Seçin</string>
+    <string name="pref_dialog_summary">Kuran-ı Kerim\'e ait gösterilmek istenen resimlere ait Hatlar için Hattat seçimi</string>
+    <string name="pref_title">Hattat Seçimi</string>
+
 </resources>

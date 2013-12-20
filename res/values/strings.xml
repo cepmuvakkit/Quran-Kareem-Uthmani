@@ -265,4 +265,14 @@
     <!-- bookmark & tag list -->
     <string name="bookmarks_list_empty">No Bookmarks</string>
     <string name="tags_list_empty">No Tags</string>
+    
+    
+    <string name="alert_dialog_single_choice">Select Arabic Text Script Calligraphy Image</string>
+    <string name="alert_dialog_ok">OK</string>
+     <string name="pref_dialog_title">Choose Calligraph Name</string>
+    <string name="pref_dialog_summary">Selection of Quran images Calligraphy  Uthmani Script handwriters</string>
+    <string name="pref_title">Calligraphy Selection</string>
+  
+    
+    
 </resources>

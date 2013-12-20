@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cepmuvakkit.kuran.hatli"
     android:installLocation="auto"
-    android:versionCode="15"
+    android:versionCode="23"
     android:versionName="3" >
 
     <uses-sdk
@@ -92,7 +92,7 @@
             android:name=".service.AudioService"
             android:exported="false" >
             <intent-filter>
-                <action android:name="com.cepmuvakkit.kuran..hatli.action.PLAYBACK" />
+                <action android:name="com.cepmuvakkit.kuran.hatli.action.PLAYBACK" />
                 <action android:name="com.cepmuvakkit.kuran.hatli.action.PLAY" />
                 <action android:name="com.cepmuvakkit.kuran.hatli.action.PAUSE" />
                 <action android:name="com.cepmuvakkit.kuran.hatli.action.SKIP" />

@@ -145,12 +145,31 @@ public class QuranPageFragment extends SherlockFragment
       return;
     }
 
-    mMainView.setBackgroundDrawable((mPageNumber % 2 == 0 ?
-        mLeftGradient : mRightGradient));
-    if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, false)) {
-      mMainView.setBackgroundColor(mResources.getColor(
-          R.color.page_background));
-    }
+		mMainView.setBackgroundDrawable((mPageNumber % 2 == 0 ? mLeftGradient
+				: mRightGradient));
+		if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, false)) {
+			String hattat = mPrefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,
+					"hafizosman/");
+
+			if (hattat.equals("bilgisayar1/")) {
+				mMainView.setBackgroundColor(mResources
+						.getColor(R.color.page_background_bilgisayar1));
+			} else if (hattat.equals("bilgisayar2/")) {
+				mMainView.setBackgroundColor(mResources
+						.getColor(R.color.page_background_bilgisayar2));
+			} else if (hattat.equals("hamidaytac/")) {
+				mMainView.setBackgroundColor(mResources
+						.getColor(R.color.page_background_hamidaytac));
+			} else if (hattat.equals("ahmethusrev/")) {
+				mMainView.setBackgroundColor(mResources
+						.getColor(R.color.page_background_ahmedhusrev));
+			} else {
+				mMainView.setBackgroundColor(mResources
+						.getColor(R.color.page_background));
+			}
+
+			
+		}
 
     boolean nightMode = false;
     int nightModeTextBrightness =

@@ -205,4 +205,14 @@
     <!-- bookmark & tag list -->
     <string name="bookmarks_list_empty">لا توجد أي مرجعيات</string>
     <string name="tags_list_empty">لا توجد أي تصنيفات</string>
+    
+        <string name="alert_dialog_single_choice">اختر اللغة العربية نص سيناريو الخط صورة</string>
+    <string name="alert_dialog_ok">صحيح</string>
+
+     <string name="pref_dialog_title">اختيار اسم الخط</string>
+    <string name="pref_dialog_summary">اختيار من القرآن الصور الخط العثماني سيناريو الكتاب اليد</string>
+    <string name="pref_title">اختيار الخط</string>
+  
+    
+    
 </resources>

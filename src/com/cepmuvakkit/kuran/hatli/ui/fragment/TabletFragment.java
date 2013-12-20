@@ -193,7 +193,21 @@ public class TabletFragment extends SherlockFragment implements AyahTracker {
     }
 
     if (!mPrefs.getBoolean(Constants.PREF_USE_NEW_BACKGROUND, false)) {
-      int color = mResources.getColor(R.color.page_background);
+    	String hattat = mPrefs.getString(Constants.PREF_DOWNLOAD_SCRIPT,
+				"hafizosman/");
+    	 int color;
+		if (hattat.equals("bilgisayar1/")) {
+			color=mResources.getColor(R.color.page_background_bilgisayar1);
+		} else if (hattat.equals("bilgisayar2/")) {
+			color=mResources.getColor(R.color.page_background_bilgisayar2);
+		} else if (hattat.equals("hamidaytac/")) {
+			color=mResources.getColor(R.color.page_background_hamidaytac);
+		} else if (hattat.equals("ahmethusrev/")) {
+			color=mResources.getColor(R.color.page_background_ahmedhusrev);
+		} else {
+			color=mResources.getColor(R.color.page_background);
+		}	
+    	
       mLeftArea.setBackgroundColor(color);
       mRightArea.setBackgroundColor(color);
     } else {
